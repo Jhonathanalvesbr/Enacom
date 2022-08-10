@@ -76,9 +76,9 @@ def buscarInstimento(investimento, acao):
 if __name__ == "__main__":
     acao = []
 
-    investimento = 4
-    preco = [2, 2, 2, 2, 2, 2, 2, 2]
-    retorno = [9, 15, 2, 1, 2, 2, 2, 3]
+    investimento = 1000000
+    preco = [470000, 400000, 170000, 270000, 340000, 230000, 50000, 440000]
+    retorno = [410000, 33000, 140000, 250000, 320000, 320000, 90000, 190000]
     c = 0
     for k in range(0, len(preco)):
         acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})

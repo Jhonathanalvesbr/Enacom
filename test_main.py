@@ -5,7 +5,7 @@ from main import buscarInstimento
 class MyTestCase(unittest.TestCase):
     def test_melhor_opaco(self):
         acao = []
-        investimento = 4
+        investimento = 2
         preco = [2, 2, 2, 50]
         retorno = [302, 201, 101, 200]
         c = 0
@@ -14,16 +14,16 @@ class MyTestCase(unittest.TestCase):
             c += 1
         self.assertEqual(buscarInstimento(investimento, acao), (302, [1]))
 
-    def test_escolhe_opcao_2_e_3(self):
+    def test_escolhe_opcao_2_e_4(self):
         acao = []
         investimento = 4
-        preco = [2, 2, 2, 50]
-        retorno = [200, 101, 101, 200]
+        preco = [1, 2, 2, 2]
+        retorno = [101, 102, 101, 101]
         c = 0
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual(buscarInstimento(investimento, acao), (302, [1]))
+        self.assertEqual(buscarInstimento(investimento, acao), (203, [2,4]))
 
     def test_investimento_inicial_vazio(self):
         acao = []
@@ -67,7 +67,7 @@ class MyTestCase(unittest.TestCase):
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual(buscarInstimento(investimento,acao), (730000,[5, 6, 7]))
+        self.assertEqual(buscarInstimento(investimento,acao), (960000,[1, 3, 6, 7]))
 
 
 if __name__ == '__main__':
