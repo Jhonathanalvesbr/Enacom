@@ -92,14 +92,14 @@ if __name__ == "__main__":
     print(f'Investimento: {locale.currency(investimento, grouping=True)}')
     for k in range(len(ACAO)):
         print(
-            f'Opção {k + 1}: {locale.currency(ACAO[k].get("preco"), grouping=True)} Retorno: {locale.currency(ACAO[k].get("retorno"), grouping=True)}')
+            f'Opção {k + 1}: {locale.currency(ACAO[k].get("preco"), grouping=True)} | Retorno: {locale.currency(ACAO[k].get("retorno"), grouping=True)}')
     print("\nMelhores opções:")
     soma = investimento
     for n in opcoes:
         for k in range(len(ACAO)):
             if (ACAO[k].get('opcao') == n):
                 print(
-                    f'Opção {ACAO[k].get("opcao")}: {locale.currency(ACAO[k].get("preco"), grouping=True)} Retorno: {locale.currency(ACAO[k].get("retorno"), grouping=True)}')
+                    f'Opção {ACAO[k].get("opcao")}: {locale.currency(ACAO[k].get("preco"), grouping=True)} | Retorno: {locale.currency(ACAO[k].get("retorno"), grouping=True)}')
                 soma -= ACAO[k].get("preco")
                 break
     print(locale.currency(soma, grouping=True))
