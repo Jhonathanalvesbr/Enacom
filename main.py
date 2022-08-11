@@ -102,7 +102,7 @@ if __name__ == "__main__":
                     f'Opção {ACAO[k].get("opcao")}: {locale.currency(ACAO[k].get("preco"), grouping=True)} | Retorno: {locale.currency(ACAO[k].get("retorno"), grouping=True)}')
                 soma -= ACAO[k].get("preco")
                 break
-    print(f'Sobrou: {locale.currency(soma, grouping=True)}')
+    print(f'Restaram: {locale.currency(soma, grouping=True)}')
     print(opcoes)
 
     print(f'Retorno: {locale.currency(retornoInvestimento, grouping=True)}')
