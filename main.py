@@ -85,8 +85,8 @@ if __name__ == "__main__":
         c += 1
     n = len(retorno)
     ACAO = copy.deepcopy(acao)
-    retornoInvestimento, path = buscarInstimento(investimento, acao)
-    path.sort()
+    retornoInvestimento, opcoes = buscarInstimento(investimento, acao)
+    opcoes.sort()
     locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
     print()
     print(f'Investimento: {locale.currency(investimento, grouping=True)}')
@@ -95,7 +95,7 @@ if __name__ == "__main__":
             f'Opção {k + 1}: {locale.currency(ACAO[k].get("preco"), grouping=True)} Retorno: {locale.currency(ACAO[k].get("retorno"), grouping=True)}')
     print("\nMelhores opções:")
     soma = investimento
-    for n in path:
+    for n in opcoes:
         for k in range(len(ACAO)):
             if (ACAO[k].get('opcao') == n):
                 print(
@@ -103,6 +103,6 @@ if __name__ == "__main__":
                 soma -= ACAO[k].get("preco")
                 break
     print(locale.currency(soma, grouping=True))
-    print(path)
+    print(opcoes)
 
     print(f'Retorno: {locale.currency(retornoInvestimento, grouping=True)}')
