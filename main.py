@@ -104,6 +104,6 @@ if __name__ == "__main__":
                 soma -= ACAO[k].get("preco")
                 break
     print(f'Restaram: {locale.currency(soma, grouping=True)}')
-    print(opcoes)
+    print(f'Carteira: {opcoes}')
 
     print(f'Retorno: {locale.currency(retornoInvestimento, grouping=True)}')
