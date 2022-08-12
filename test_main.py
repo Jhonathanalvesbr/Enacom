@@ -71,7 +71,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_investimento_inicial_negativo(self):
         acao = []
-        investimento = 0
+        investimento = -1
         preco = []
         retorno = []
         c = 0
