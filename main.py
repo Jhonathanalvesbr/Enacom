@@ -19,7 +19,7 @@ def buscarInstimento(investimento, acao):
 
             if (selecao['opcao'] == 1):
                 for i in range(len(acaoCopy)):
-                    if (acaoCopy[i] == 5):
+                    if (acaoCopy[i]['opcao'] == 5):
                         acaoCopy.pop(i)
                         break
                 valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
@@ -30,10 +30,11 @@ def buscarInstimento(investimento, acao):
                 for i in range(len(acaoCopy)):
                     if (acaoCopy[i]['opcao'] == 1):
                         acaoCopy.pop(i)
+                        valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
+                        valor1 += selecao.get('retorno')
+                        opcao1 = [selecao.get('opcao')] + opcao1
                         break
-                valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
-                valor1 += selecao.get('retorno')
-                opcao1 = [selecao.get('opcao')] + opcao1
+
 
             elif (selecao['opcao'] == 2 and 4 in list(map(lambda a:a['opcao'], acaoCopy))):
                 for i in range(len(acaoCopy)):
