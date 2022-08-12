@@ -69,7 +69,7 @@ class MyTestCase(unittest.TestCase):
             c += 1
         self.assertEqual((0, []), buscarInstimento(investimento, acao))
 
-    def test_sem_opcao(self):
+    def test_com_investimento_e_sem_opcao(self):
         acao = []
         investimento = 100
         preco = []
