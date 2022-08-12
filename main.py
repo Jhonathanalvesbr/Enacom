@@ -12,8 +12,9 @@ def buscarInstimento(investimento, acao):
 
     for k in range(len(acao)):
         acaoCopy = copy.deepcopy(acao)
-        selecao = acaoCopy.pop(k)
 
+        selecao = acaoCopy.pop(k)
+        acaoCopyNaoSeleciona = copy.deepcopy(acaoCopy)
         if(investimento - selecao.get("preco") >= 0):
             soma = selecao['preco']
 
@@ -30,11 +31,10 @@ def buscarInstimento(investimento, acao):
                 for i in range(len(acaoCopy)):
                     if (acaoCopy[i]['opcao'] == 1):
                         acaoCopy.pop(i)
-                        valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
-                        valor1 += selecao.get('retorno')
-                        opcao1 = [selecao.get('opcao')] + opcao1
                         break
-
+                valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
+                valor1 += selecao.get('retorno')
+                opcao1 = [selecao.get('opcao')] + opcao1
 
             elif (selecao['opcao'] == 2 and 4 in list(map(lambda a:a['opcao'], acaoCopy))):
                 for i in range(len(acaoCopy)):
@@ -65,8 +65,8 @@ def buscarInstimento(investimento, acao):
 
 
 
-        valor2, opcao2 = buscarInstimento(investimento, acaoCopy)
-
+        valor2, opcao2 = buscarInstimento(investimento, acaoCopyNaoSeleciona)
+        print(acaoCopy)
         r = max(valor1, valor2)
 
         if (r == valor1):
