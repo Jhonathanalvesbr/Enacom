@@ -18,12 +18,12 @@ class MyTestCase(unittest.TestCase):
         acao = []
         investimento = 4
         preco = [2, 2, 2, 2, 2]
-        retorno = [501, 102, 101, 101, 501]
+        retorno = [502, 102, 101, 101, 501]
         c = 0
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual((602, [1, 3]), buscarInstimento(investimento, acao))
+        self.assertEqual((603, [1, 3]), buscarInstimento(investimento, acao))
 
     def test_escolhe_opcao_5(self):
         acao = []
@@ -51,12 +51,12 @@ class MyTestCase(unittest.TestCase):
         acao = []
         investimento = 4
         preco = [2, 2, 2, 2]
-        retorno = [102, 102, 101, 102]
+        retorno = [101, 101, 101, 102]
         c = 0
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual((204, [2,4]), buscarInstimento(investimento, acao))
+        self.assertEqual((203, [2,4]), buscarInstimento(investimento, acao))
 
     def test_investimento_inicial_vazio(self):
         acao = []
