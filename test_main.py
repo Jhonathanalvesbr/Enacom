@@ -39,8 +39,8 @@ class MyTestCase(unittest.TestCase):
     def test_escolhe_opcao_2_e_4(self):
         acao = []
         investimento = 4
-        preco = [1, 2, 2, 2]
-        retorno = [101, 102, 101, 101]
+        preco = [1, 2, 2, 2, 2]
+        retorno = [101, 102, 101, 101, 101]
         c = 0
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
@@ -50,8 +50,8 @@ class MyTestCase(unittest.TestCase):
     def test_escolhe_opcao_4_e_2(self):
         acao = []
         investimento = 4
-        preco = [2, 2, 2, 2]
-        retorno = [101, 101, 101, 102]
+        preco = [2, 2, 2, 2, 2 ]
+        retorno = [101, 101, 101, 102, 101]
         c = 0
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
