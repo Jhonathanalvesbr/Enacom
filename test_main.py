@@ -6,13 +6,13 @@ class MyTestCase(unittest.TestCase):
     def test_melhor_opaco(self):
         acao = []
         investimento = 2
-        preco = [2, 2, 2, 50]
-        retorno = [302, 201, 101, 200]
+        preco = [2, 2, 2, 50, 2, 2]
+        retorno = [302, 201, 101, 200, 700, 800]
         c = 0
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual((302, [1]), buscarInstimento(investimento, acao))
+        self.assertEqual((800, [6]), buscarInstimento(investimento, acao))
 
     def test_escolhe_opcao_1(self):
         acao = []
