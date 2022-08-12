@@ -36,7 +36,7 @@ def buscarInstimento(investimento, acao):
                 valor1 += selecao.get('retorno')
                 opcao1 = [selecao.get('opcao')] + opcao1
 
-            elif (selecao['opcao'] == 2 and 4 in list(map(lambda a:a['opcao'], acaoCopy))):
+            elif (selecao['opcao'] == 2 and (4 in list(map(lambda a:a['opcao'], acaoCopy)))):
                 for i in range(len(acaoCopy)):
                     if (acaoCopy[i]['opcao'] == 4):
                         select = acaoCopy.pop(i)
@@ -45,17 +45,21 @@ def buscarInstimento(investimento, acao):
                             valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
                             valor1 += selecao.get('retorno') + select.get('retorno')
                             opcao1 = [selecao.get('opcao')] + opcao1 + [select.get('opcao')]
+                        else:
+                            return 0, []
                         break
 
-            elif (selecao['opcao'] == 4 and 2 in list(map(lambda a: a['opcao'], acaoCopy))):
+            elif (selecao['opcao'] == 4 and (2 in list(map(lambda a: a['opcao'], acaoCopy)))):
                 for i in range(len(acaoCopy)):
-                    if (acaoCopy[i] == 2):
+                    if (acaoCopy[i]['opcao'] == 2):
                         select = acaoCopy.pop(i)
                         soma += select['preco']
                         if (investimento - soma) >= 0:
                             valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
                             valor1 += selecao.get('retorno') + select.get('retorno')
                             opcao1 = [selecao.get('opcao')] + opcao1 + [select.get('opcao')]
+                        else:
+                            return 0, []
                         break
 
             else:
