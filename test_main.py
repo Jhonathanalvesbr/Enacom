@@ -60,7 +60,18 @@ class MyTestCase(unittest.TestCase):
 
     def test_investimento_inicial_vazio_e_sem_opcao(self):
         acao = []
-        investimento = -1
+        investimento = 0
+        preco = []
+        retorno = []
+        c = 0
+        for k in range(0, len(preco)):
+            acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
+            c += 1
+        self.assertEqual((0, []), buscarInstimento(investimento, acao))
+
+    def test_investimento_inicial_negativo(self):
+        acao = []
+        investimento = 0
         preco = []
         retorno = []
         c = 0
