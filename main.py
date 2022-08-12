@@ -66,7 +66,7 @@ def buscarInstimento(investimento, acao):
 
 
         valor2, opcao2 = buscarInstimento(investimento, acaoCopyNaoSeleciona)
-        print(acaoCopy)
+
         r = max(valor1, valor2)
 
         if (r == valor1):
