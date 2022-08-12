@@ -23,18 +23,18 @@ class MyTestCase(unittest.TestCase):
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual((601, [1, 3]), buscarInstimento(investimento, acao))
+        self.assertEqual((601, [3, 5]), buscarInstimento(investimento, acao))
 
-    def test_escolhe_opcao_1_ou_5(self):
+    def test_escolhe_opcao_5_ou_1(self):
         acao = []
         investimento = 4
-        preco = [2, 2, 2, 2, 2]
-        retorno = [500, 102, 101, 101, 502]
+        preco = [1, 2, 2, 2, 2]
+        retorno = [503, 102, 101, 101, 500]
         c = 0
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual((603, [3, 5]), buscarInstimento(investimento, acao))
+        self.assertEqual((604, [1, 3]), buscarInstimento(investimento, acao))
 
     def test_escolhe_opcao_2_e_4(self):
         acao = []
