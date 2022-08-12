@@ -23,7 +23,7 @@ class MyTestCase(unittest.TestCase):
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual(buscarInstimento(investimento, acao), (601, [1, 3]))
+        self.assertEqual((601, [1, 3]), buscarInstimento(investimento, acao))
 
     def test_escolhe_opcao_1_ou_5(self):
         acao = []
@@ -45,7 +45,7 @@ class MyTestCase(unittest.TestCase):
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual(buscarInstimento(investimento, acao), (203, [2,4]))
+        self.assertEqual((203, [2,4]), buscarInstimento(investimento, acao))
 
     def test_investimento_inicial_vazio(self):
         acao = []
@@ -56,7 +56,7 @@ class MyTestCase(unittest.TestCase):
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual(buscarInstimento(investimento, acao), (0, []))
+        self.assertEqual((0, []), buscarInstimento(investimento, acao))
 
     def test_investimento_inicial_vazio_e_sem_opcao(self):
         acao = []
@@ -67,7 +67,7 @@ class MyTestCase(unittest.TestCase):
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual(buscarInstimento(investimento, acao), (0, []))
+        self.assertEqual((0, []), buscarInstimento(investimento, acao))
 
     def test_sem_opcao(self):
         acao = []
@@ -78,7 +78,7 @@ class MyTestCase(unittest.TestCase):
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual(buscarInstimento(investimento, acao), (0, []))
+        self.assertEqual((0, []), buscarInstimento(investimento, acao))
 
     def test_melhor_opcao_enacom(self):
         acao = []
@@ -89,7 +89,7 @@ class MyTestCase(unittest.TestCase):
         for k in range(0, len(preco)):
             acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
             c += 1
-        self.assertEqual(buscarInstimento(investimento,acao), (960000,[1, 3, 6, 7]))
+        self.assertEqual((980000,[1, 4, 6]), buscarInstimento(investimento,acao))
 
 
 if __name__ == '__main__':
