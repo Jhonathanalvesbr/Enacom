@@ -65,8 +65,6 @@ def buscarInstimento(investimento, acao):
                 valor1 += selecao.get('retorno')
                 opcao1 = [selecao.get('opcao')] + opcao1
 
-
-
         valor2, opcao2 = buscarInstimento(investimento, acaoCopyNaoSeleciona)
 
         r = max(valor1, valor2)
