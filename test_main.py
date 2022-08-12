@@ -14,7 +14,7 @@ class MyTestCase(unittest.TestCase):
             c += 1
         self.assertEqual((800, [6]), buscarInstimento(investimento, acao))
 
-    def test_escolhe_opcao_1(self):
+    def test_escolhe_opcao_1_e_nao_escolhe_5(self):
         acao = []
         investimento = 4
         preco = [2, 2, 2, 2, 2]
@@ -25,7 +25,7 @@ class MyTestCase(unittest.TestCase):
             c += 1
         self.assertEqual((603, [1, 3]), buscarInstimento(investimento, acao))
 
-    def test_escolhe_opcao_5(self):
+    def test_escolhe_opcao_5_e_nao_escolhe_1(self):
         acao = []
         investimento = 4
         preco = [1, 2, 2, 2, 2]
