@@ -15,6 +15,7 @@ def buscarInstimento(investimento, acao):
 
         selecao = acaoCopy.pop(k)
         acaoCopyNaoSeleciona = copy.deepcopy(acaoCopy)
+
         if(investimento - selecao.get("preco") >= 0):
             soma = selecao['preco']
 
@@ -42,7 +43,7 @@ def buscarInstimento(investimento, acao):
                         if (acaoCopy[i]['opcao'] == 4):
                             select = acaoCopy.pop(i)
                             soma += select['preco']
-                            if (investimento - soma) >= 0:
+                            if (investimento - soma) > 0:
                                 valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
                                 valor1 += selecao.get('retorno') + select.get('retorno')
                                 opcao1 = [selecao.get('opcao')] + opcao1 + [select.get('opcao')]
@@ -54,7 +55,7 @@ def buscarInstimento(investimento, acao):
                         if (acaoCopy[i]['opcao'] == 2):
                             select = acaoCopy.pop(i)
                             soma += select['preco']
-                            if (investimento - soma) >= 0:
+                            if (investimento - soma) > 0:
                                 valor1, opcao1 = buscarInstimento(investimento - soma, acaoCopy)
                                 valor1 += selecao.get('retorno') + select.get('retorno')
                                 opcao1 = [selecao.get('opcao')] + opcao1 + [select.get('opcao')]
@@ -79,7 +80,7 @@ if __name__ == "__main__":
 
     investimento = 1000000
     preco = [470000, 400000, 170000, 270000, 340000, 230000, 50000, 440000]
-    retorno = [410000, 33000, 140000, 250000, 320000, 320000, 90000, 190000]
+    retorno = [410000, 330000, 140000, 250000, 320000, 320000, 90000, 190000]
     c = 0
     for k in range(0, len(preco)):
         acao.append({"opcao": c + 1, 'preco': preco[k], 'retorno': retorno[k]})
